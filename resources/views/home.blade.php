@@ -13,12 +13,12 @@
 
        
         @if($expiringAssets->isEmpty())
-            <p>No licenses are expiring in the next 15 days.</p>
+            {{-- <p>No licenses are expiring in the next 15 days.</p> --}}
         @else
             <ul class="list-group">
                 @foreach($expiringAssets as $asset)
                     <p class=" alert alert-warning ">
-                        lincense {{ $asset->name }} - Expires on {{ \Carbon\Carbon::parse($asset->license_expiration_date)->format('Y-m-d') }}
+                        license {{ $asset->asset_id }}_{{ $asset->name }}_{{ $asset->type }}- Expires on {{ \Carbon\Carbon::parse($asset->expired)->format('d-m-Y') }}
                     </p>
                 @endforeach
             </ul>

@@ -133,6 +133,7 @@ class AssetController extends Controller
         $asset = Asset::firstWhere('asset_id', $asset_id);
         $progressPercentage = 0;
         $timeLeft = 0;
+        $timeLeft = 0;
 
         if ($asset->type_asset == "license") {
             // Define the target date (just the date, no specific time)
