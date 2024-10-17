@@ -220,13 +220,16 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
+
                     @yield('content')
+
 
                 </div>
                 <!-- End of Main Content -->
 
                 <!-- Footer -->
                 <footer class="sticky-footer bg-white">
+                    <a href="/home"></a>
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
                             <span>Copyright &copy; Hafizh Fauzan Umar 2024</span>
