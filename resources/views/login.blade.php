@@ -11,6 +11,8 @@
 
     <title>IT Asset Management</title>
 
+    <link rel="shortcut icon" href="{{ asset('images/pp/impack.png') }}" type="image/x-icon">
+
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link

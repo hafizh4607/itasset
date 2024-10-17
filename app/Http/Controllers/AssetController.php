@@ -13,6 +13,7 @@ class AssetController extends Controller
     {
         $assets = Asset::get();
         
+        //search
         if($request->search) {
             // $employee = Employee::where('name', "LIKE", "%$request->search%")->first();
 
@@ -132,9 +133,11 @@ class AssetController extends Controller
     {
         $asset = Asset::firstWhere('asset_id', $asset_id);
         $progressPercentage = 0;
+        $daysLeft = 0;
         $timeLeft = 0;
 
         if ($asset->type_asset == "license") {
+
             // Define the target date (just the date, no specific time)
             $targetDate = Carbon::parse($asset->expired);
 

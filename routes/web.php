@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\UserMiddleware;
-use App\Models\Asset;
+use app\Models\asset;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 // Route::post('/', [HomeController::class, 'store']);
 Route::get('/', [AuthController::class, 'login_get']);
 Route::post('/', [AuthController::class, 'login_post']);
+
 
 
 Route::middleware(UserMiddleware::class)->group(function () {
@@ -27,7 +28,8 @@ Route::middleware(UserMiddleware::class)->group(function () {
     Route::get('/asset/type/{type_asset}', [AssetController::class, 'typelist']);
     Route::get('/asset/detail/{type_asset}', [AssetController::class, 'detail']);
 
-    Route::middleware(AdminMiddleware::class)->group(function () {
+    Route::middleware(AdminMiddleware::class)->group(function () 
+    {
 
         // Employee
         Route::get('/employee/add', [EmployeeController::class, 'create']);
@@ -57,7 +59,7 @@ Route::middleware(UserMiddleware::class)->group(function () {
         Route::get('/asset/{type_asset}', [AssetController::class, 'typelist']); 
         Route::get('/asset/detail/{type_asset}', [AssetController::class, 'detail']); 
         
-        // Search
+      
    
     });
 });
