@@ -135,6 +135,7 @@ class AssetController extends Controller
         $progressPercentage = 0;
         $daysLeft = 0;
         $timeLeft = 0;
+        
 
         if ($asset->type_asset == "license") {
 
