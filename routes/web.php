@@ -11,22 +11,17 @@ use app\Models\asset;
 use Illuminate\Support\Facades\Route;
 
 
-// Route::get('/', [HomeController::class, 'index']);
-// Route::post('/', [HomeController::class, 'store']);
 Route::get('/', [AuthController::class, 'login_get']);
 Route::post('/', [AuthController::class, 'login_post']);
 
-
-
-Route::middleware(UserMiddleware::class)->group(function () {
+Route::middleware(UserMiddleware::class)->group(function (){
 
     Route::post('/logout', [AuthController::class, 'logout']);
-
     Route::get('/home', [HomeController::class, 'index']);
     Route::get('/employee', [EmployeeController::class, 'index']);
     Route::get('/asset', [AssetController::class, 'index']);
-    Route::get('/asset/type/{type_asset}', [AssetController::class, 'typelist']);
-    Route::get('/asset/detail/{type_asset}', [AssetController::class, 'detail']);
+    Route::get('/asset/type/{type_asset}', [AssetController::class, 'typelist']); 
+    Route::get('/asset/detail/{type_asset}', [AssetController::class, 'detail']); 
 
     Route::middleware(AdminMiddleware::class)->group(function () 
     {
@@ -37,8 +32,6 @@ Route::middleware(UserMiddleware::class)->group(function () {
         Route::post('/employee/{id}', [EmployeeController::class, 'destroy']);
         Route::get('/employeedit/{id}', [EmployeeController::class, 'edit']);
         Route::post('/employeedit/{id}', [EmployeeController::class, 'update']);
-
-
 
         // Asset
         Route::get('/asset/add', [AssetController::class, 'create']);
@@ -55,11 +48,5 @@ Route::middleware(UserMiddleware::class)->group(function () {
         Route::post('/useredit/{id}', [UserController::class, 'update']);
         Route::post('/user/{id}', [UserController::class, 'destroy']);
 
-        //detail list dashboard
-        Route::get('/asset/{type_asset}', [AssetController::class, 'typelist']); 
-        Route::get('/asset/detail/{type_asset}', [AssetController::class, 'detail']); 
-        
-      
-   
     });
 });

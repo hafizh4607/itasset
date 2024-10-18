@@ -35,6 +35,7 @@ class EmployeeController extends Controller
         if($request->hasFile('foto')){
             $file = $request->file('foto');
             $file ->move(public_path()."/images/pp/" , "$filename.png");
+            $data["foto"] = "images/pp/$filename.png";
         } else {
             $filename = "default";
         }

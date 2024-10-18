@@ -18,7 +18,7 @@
             <ul class="list-group">
                 @foreach($expiringAssets as $asset)
                     <p class=" alert alert-warning ">
-                        lincense {{ $asset->name }} - Expires on {{ \Carbon\Carbon::parse($asset->license_expiration_date)->format('Y-m-d') }}
+                        lincense {{ $asset->name }} - Expires on {{ \Carbon\Carbon::parse($asset->expired)->format('Y-m-d') }}
                     </p>
                 @endforeach
             </ul>
@@ -29,7 +29,7 @@
 
     <!-- Menu Laptop -->
     <div class="col-md-4 mb-3">
-        <a href="/asset/laptop/">
+        <a href="/asset/type/laptop/">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -49,7 +49,7 @@
 
     <!-- Menu PC -->
     <div class=" col-md-4 mb-3">
-        <a href="/asset/pc">
+        <a href="/asset/type/pc">
         <div class="card border-left-success shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -68,7 +68,7 @@
 
     <!-- Menu Server -->
     <div class="col-md-4 mb-3">
-        <a href="/asset/server">
+        <a href="/asset/type/server">
         <div class="card border-left-success shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -87,7 +87,7 @@
 
     <!-- Menu Router -->
     <div class="col-md-4 mb-3">
-        <a href="/asset/router">
+        <a href="/asset/type/router">
         <div class="card border-left-warning shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -109,7 +109,7 @@
 
     <!-- Menu Switch -->
     <div class="col-md-4 mb-3">
-        <a href="/asset/switch">
+        <a href="/asset/type/switch">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -128,7 +128,7 @@
 
     <!-- Menu AP -->
     <div class="col-md-4 mb-3">
-        <a href="/asset/ap">
+        <a href="/asset/type/ap">
         <div class="card border-left-success shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -147,7 +147,7 @@
 
     <!-- License -->
     <div class="col-md-4 mb-3">
-        <a href="/asset/license">
+        <a href="/asset/type/license">
         <div class="card border-left-success shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -166,7 +166,7 @@
 
     <!-- Spare -->
     <div class="col-md-4 mb-3">
-        <a href="/asset/spare">
+        <a href="/asset/type/spare">
         <div class="card border-left-warning shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -186,7 +186,7 @@
 
     <!-- Total -->
     <div class="col-md-4 mb-3">
-        <a href="/asset">
+        <a href="/asset/">
         <div class="card border-left-warning shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
