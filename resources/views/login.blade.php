@@ -45,8 +45,8 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image ">
-                                <img src="{{ asset('images/pp/impack.png') }}" class="img-fluid mx-auto d-block "alt="Responsive image" >
+                            <div class="col-lg-6 d-flex justify-content-center align-items-center w-100  ">
+                                <img src="{{ asset('images/pp/impack.png') }}" class="img-fluid mx-auto d-block h-75 "alt="Responsive image" >
                             </div>
                             <div class="col-lg-6 copyright text-center my-auto">
                                 <div class="p-5">

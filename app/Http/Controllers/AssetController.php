@@ -121,6 +121,7 @@ class AssetController extends Controller
     public function typelist($type_asset)
     {
         $assets = Asset::where('type_asset', $type_asset)->get();
+       
 
         if ($type_asset == 'spare') {
             $assets = Asset::where('employee_id', null)->get();
