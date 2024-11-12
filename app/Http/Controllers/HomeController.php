@@ -42,6 +42,29 @@ class HomeController extends Controller
             session()->flash('license_warning', "Warning: Some licenses are expiring soon!");
 
             $form = $expiringAssets;
+            $form->map(function($asset){
+
+                $targetDate = Carbon::parse($asset->expired);
+
+                // Get the current date
+                $now = Carbon::now();
+    
+                // Get the start of the current year (e.g., 2024-01-01)
+                $startOfYear = Carbon::now()->startOfYear();
+    
+                // Calculate the total number of days from the start of the year to the target date
+                $totalDays = $startOfYear->diffInDays($targetDate);
+    
+                // Calculate how many days are left between now and the target date
+                $daysLeft = max(0, $now->diffInDays($targetDate, false)); // Ensure no negative values
+    
+                // Calculate the number of days that have passed since the start of the year
+                $daysPassed = $totalDays - $daysLeft;
+
+                $asset['timeleft'] = $daysPassed;
+            });
+
+            
 
             Mail::to(env('MAIL_RECEIVER'))
             ->send(new Alert($form));

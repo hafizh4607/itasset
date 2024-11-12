@@ -37,6 +37,8 @@
                     <td>{{$asset->type}}</td>
                     <td>{{$asset->type_asset}}</td>
                     <td>{{$asset->expired}}</td>
+                    <td>{{$asset->timeleft}}</td>
+
                 
             </tr>
             @endforeach
