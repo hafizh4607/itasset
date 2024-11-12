@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    {{-- <style>
+    <style>
         table, th, td {
             padding: 1px;
             border: 1px solid black;
             border-collapse: collapse;
         }
-    </style> --}}
-    <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
-
+    </style>
 </head>
 <body>
     <p>Dear ...</p>
     <P>license ini akan </P>
 
-    <table class="table table-striped overflow-x-auto">
+    <table>
         <thead>
             <tr>
                 <th>Name</th>
