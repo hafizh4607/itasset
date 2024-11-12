@@ -6,14 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        table, th, td {
-            padding: 1rem;
+        /* table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
-        }
-        th{ 
-            padding: 1rem
-        }
+        } */
     </style>
 </head>
 <body>
