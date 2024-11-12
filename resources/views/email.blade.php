@@ -38,7 +38,7 @@
                     <td>{{$asset->type}}</td>
                     <td>{{$asset->type_asset}}</td>
                     <td>{{$asset->expired}}</td>
-                    <td>{{floor($asset->timeleft)}}</td>
+                    <td>{{floor($asset->timeleft)}} Days</td>
 
                 
             </tr>
