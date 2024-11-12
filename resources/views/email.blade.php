@@ -11,6 +11,9 @@
             border-collapse: collapse;
             padding: 1rem;
         }
+        table {
+            margin-left: 1rem;
+        }
     </style>
 </head>
 <body>
