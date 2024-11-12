@@ -12,7 +12,7 @@
             padding: 1rem;
         }
         table {
-            margin-left: 20rem;
+            margin-left: 7rem;
         }
     </style>
 </head>
