@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        /* table, th, td {
+        table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
-        } */
+            padding: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -19,10 +20,10 @@
     <table>
         <thead>
             <tr>
-                <th style="padding: 1rem; background-color: lightgrey;">Name</th>
-                <th style="padding: 1rem; background-color: lightgrey;">Type</th>
-                <th style="padding: 1rem; background-color: lightgrey;">Type Asset</th>
-                <th style="padding: 1rem; background-color: lightgrey;">expired</th>
+                <th style="background-color: lightgrey;">Name</th>
+                <th style="background-color: lightgrey;">Type</th>
+                <th style="background-color: lightgrey;">Type Asset</th>
+                <th style="background-color: lightgrey;">expired</th>
             </tr>
             </thead>
         <tbody>
