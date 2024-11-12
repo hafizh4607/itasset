@@ -160,6 +160,8 @@ class AssetController extends Controller
 
             // Calculate the progress percentage
             $progressPercentage = (($daysPassed / $totalDays) * 100);
+
+            
         }
 
         return view('detail', compact('progressPercentage', 'daysLeft', 'asset'));

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Alert;
 use App\Models\Asset;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -38,6 +40,16 @@ class HomeController extends Controller
                 return Carbon::parse($asset->expired)->diffInDays(now());
             });
             session()->flash('license_warning', "Warning: Some licenses are expiring soon!");
+
+            $form = [
+                'daysleft' => $daysLeft,
+                'expiringAssets' => $expiringAssets
+
+            ];
+
+            Mail::to(env('MAIL_RECEIVER'))
+            ->send(new Alert($form));
+        
         }
 
 
