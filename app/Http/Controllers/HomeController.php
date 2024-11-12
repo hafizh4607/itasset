@@ -43,12 +43,10 @@ class HomeController extends Controller
 
             $form = [
                 'daysleft' => $daysLeft,
-                'expiringAssets' => $expiringAssets
-
             ];
 
             Mail::to(env('MAIL_RECEIVER'))
-            ->send(new Alert($form));
+            ->send(new Alert($form, $expiringAssets));
         
         }
 
