@@ -11,6 +11,9 @@
             border: 1px solid black;
             border-collapse: collapse;
         }
+        th{ 
+            padding: 1rem
+        }
     </style>
 </head>
 <body>
@@ -29,10 +32,10 @@
         <tbody>
             @foreach($form as $asset)
             <tr>
-                    <td style="padding: 1rem;">{{$asset->name}}</td>
-                    <td style="padding: 1rem;">{{$asset->type}}</td>
-                    <td style="padding: 1rem;">{{$asset->type_asset}}</td>
-                    <td style="padding: 1rem;">{{$asset->expired}}</td>
+                    <td>{{$asset->name}}</td>
+                    <td>{{$asset->type}}</td>
+                    <td>{{$asset->type_asset}}</td>
+                    <td>{{$asset->expired}}</td>
                 
             </tr>
             @endforeach
