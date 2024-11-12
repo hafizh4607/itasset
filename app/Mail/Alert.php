@@ -16,7 +16,7 @@ class Alert extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public $form, public $expiredAssets)
+    public function __construct(public $form)
     {
         //
     }
@@ -40,7 +40,6 @@ class Alert extends Mailable
             view: 'email',
             with: [
                 'form' => $this->form,
-                'expiredAssets' => $this->expiredAssets
             ]
             );
     }

@@ -20,7 +20,7 @@
             </tr>
             </thead>
         <tbody>
-            @foreach($expiringAssets as $asset)
+            @foreach($form as $asset)
             <tr>
                     <td>{{$asset->name}}</td>
                     <td>{{$asset->type}}</td>

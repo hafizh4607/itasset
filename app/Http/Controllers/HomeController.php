@@ -41,12 +41,10 @@ class HomeController extends Controller
             });
             session()->flash('license_warning', "Warning: Some licenses are expiring soon!");
 
-            $form = [
-                'daysleft' => $daysLeft,
-            ];
+            $form = $expiringAssets;
 
             Mail::to(env('MAIL_RECEIVER'))
-            ->send(new Alert($form, $expiringAssets));
+            ->send(new Alert($form));
         
         }
 
