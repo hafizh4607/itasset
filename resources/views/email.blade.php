@@ -20,19 +20,19 @@
     <table>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Type Asset</th>
-                <th>expired</th>
+                <th style="padding: 1rem; background-color: lightgrey;">Name</th>
+                <th style="padding: 1rem; background-color: lightgrey;">Type</th>
+                <th style="padding: 1rem; background-color: lightgrey;">Type Asset</th>
+                <th style="padding: 1rem; background-color: lightgrey;">expired</th>
             </tr>
             </thead>
         <tbody>
             @foreach($form as $asset)
             <tr>
-                    <td>{{$asset->name}}</td>
-                    <td>{{$asset->type}}</td>
-                    <td>{{$asset->type_asset}}</td>
-                    <td>{{$asset->expired}}</td>
+                    <td style="padding: 1rem;">{{$asset->name}}</td>
+                    <td style="padding: 1rem;">{{$asset->type}}</td>
+                    <td style="padding: 1rem;">{{$asset->type_asset}}</td>
+                    <td style="padding: 1rem;">{{$asset->expired}}</td>
                 
             </tr>
             @endforeach
