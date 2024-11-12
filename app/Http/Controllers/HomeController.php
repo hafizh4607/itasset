@@ -57,11 +57,8 @@ class HomeController extends Controller
     
                 // Calculate how many days are left between now and the target date
                 $daysLeft = max(0, $now->diffInDays($targetDate, false)); // Ensure no negative values
-    
-                // Calculate the number of days that have passed since the start of the year
-                $daysPassed = $totalDays - $daysLeft;
 
-                $asset['timeleft'] = $daysPassed;
+                $asset['timeleft'] = $daysLeft;
             });
 
             
