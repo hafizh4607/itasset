@@ -16,7 +16,8 @@
 <body>
     <p>Dear ...</p>
     <P>license ini akan </P>
-
+    &emsp;
+    &emsp;
     <table>
         <thead>
             <tr>
