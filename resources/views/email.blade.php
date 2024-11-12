@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
         table, th, td {
-            padding: 1px;
+            padding: 1rem;
             border: 1px solid black;
             border-collapse: collapse;
         }
