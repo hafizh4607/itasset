@@ -28,6 +28,7 @@
                 <th style="background-color: lightgrey;">Type</th>
                 <th style="background-color: lightgrey;">Type Asset</th>
                 <th style="background-color: lightgrey;">expired</th>
+                <th style="background-color: lightgrey;">day left</th>
             </tr>
             </thead>
         <tbody>
