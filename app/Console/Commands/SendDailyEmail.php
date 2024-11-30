@@ -22,36 +22,21 @@ class SendDailyEmail extends Command
     public function handle() {
         $now = Carbon::now();
         $expirationDateLimit = $now->copy()->addDays(15);
-
-
-        $expiringAssets = Asset::where('type_asset', 'license')
-            ->where('expired', '>=', $now) // Must be in the future
-            ->where('expired', '<=', $expirationDateLimit) // Must be within the next 15 days
+    
+        // Find assets expiring within the next 15 days
+        $assetsToExpire = Asset::where('type_asset', 'license')
+            ->whereBetween('expired', [$now, $expirationDateLimit])
             ->get();
-
-        $form = $expiringAssets;
-            $form->map(function($asset){
-
-                $targetDate = Carbon::parse($asset->expired);
-
-                // Get the current date
-                $now = Carbon::now();
     
-                // Get the start of the current year (e.g., 2024-01-01)
-                $startOfYear = Carbon::now()->startOfYear();
+        // Calculate remaining days for each asset
+        $assetsToExpire->each(function ($asset) use ($now) {
+            $targetDate = Carbon::parse($asset->expired);
+            $asset['timeleft'] = $now->diffInDays($targetDate, false);
+        });
     
-                // Calculate the total number of days from the start of the year to the target date
-                $totalDays = $startOfYear->diffInDays($targetDate);
-    
-                // Calculate how many days are left between now and the target date
-                $daysLeft = max(0, $now->diffInDays($targetDate, false)); // Ensure no negative values
-
-                $asset['timeleft'] = $daysLeft;
-            });
-
-            
-            Mail::to(env('MAIL_RECEIVER'))
-            ->send(new Alert($form));
+        // Send notification
+        Mail::to(env('MAIL_RECEIVER'))
+            ->send(new Alert($assetsToExpire));
     }
 
 }
